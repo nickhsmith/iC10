@@ -12,7 +12,7 @@ Print results of the iC10 classifier
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-An object of \code{iC10} class: 
+An object of \code{iC10} class:
 }
   \item{\dots}{
 Additional arguments passed to \code{print}.
@@ -22,6 +22,8 @@ Additional arguments passed to \code{print}.
 It returns a call to \code{str}.
 }
 \references{
+Ali HR et al. Genome-driven integrated classification of breast cancer
+validated in over 7,500 samples. Genome Biology 2014; 15:431.
 Curtis et al. The genomic and transcriptomic architecture of 2,000
 breast tumours reveals novel subgroups. Nature 2012; 486:346-352.
 }

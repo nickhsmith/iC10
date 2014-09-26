@@ -43,7 +43,7 @@ function(CN, Probes, Map, by.feat, ref, Synonyms) {
 
     for (i in Probes) {
         id <- which(Map$Probe_ID == i)[1] ## Some probes have two annotations
-        sub.CN <- CN[which(CN$chrom==Map[id, paste('chromosome_name', ref, sep="_")] &
+        sub.CN <- CN[which(CN$chromosome_name==Map[id, paste('chromosome_name', ref, sep="_")] &
                            ((CN$loc.start>=Map[id, paste('start_position', ref, sep="_")] &
                            CN$loc.start<=Map[id, paste('end_position', ref, sep="_")]) |
                            (CN$loc.start<=Map[id, paste('start_position', ref, sep="_")] &
@@ -63,7 +63,7 @@ function(CN, Probes, Map, by.feat, ref, Synonyms) {
             if (is.na(new.D1[i,j])) {
                 id <- which(Map$Probe_ID == colnames(new.D1)[j])[1] ## Some probes have two annotations
                 sub.CN <- CN[which(CN$ID == new.D1[i,1] &
-                                   CN$chrom==Map[id, paste('chromosome_name', ref, sep="_")] &
+                                   CN$chromosome_name==Map[id, paste('chromosome_name', ref, sep="_")] &
                                    (CN$loc.start>=Map[id, paste('start_position', ref, sep="_")])),][1,]
                 new.D1[i,j] <- sub.CN$seg.mean
             }

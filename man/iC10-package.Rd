@@ -5,7 +5,7 @@
 A copy number and expression-based classifier for breast tumours.
 }
 \description{
-iC10 implements the classifier described in the METABRIC paper 'The genomic and transcriptomic architecture of 2,000 breast tumours reveals novel subgroups' (Curtis et al., Nature 2012). It uses copy number and/or expression form breast cancer data, trains a pamr classifier (Tibshirani et al.) with the features available and predicts the iC10 group.
+iC10 implements the classifier described in the paper 'Genome-driven integrated classification of breast cancer validated in over 7,500 samples' (Ali HR et al., Genome Biology 2014). It uses copy number and/or expression form breast cancer data, trains a pamr classifier (Tibshirani et al.) with the features available and predicts the iC10 group.
 }
 \details{
 \tabular{ll}{
@@ -31,6 +31,8 @@ Oscar M Rueda
 Maintainer: <Oscar.Rueda@cruk.cam.ac.uk>
 }
 \references{
+Ali HR et al. Genome-driven integrated classification of breast cancer
+validated in over 7,500 samples. Genome Biology 2014; 15:431.
 Curtis et al. The genomic and transcriptomic architecture of 2,000
 breast tumours reveals novel subgroups. Nature 2012; 486:346-352.
 Tibshirani et al. Diagnosis of multiple cancer types by shrunken

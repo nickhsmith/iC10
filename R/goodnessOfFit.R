@@ -15,7 +15,7 @@ goodnessOfFit.iC10 <- function(obj, iC10=1:10, newdata=NULL,...) {
     x <- rep(NA, length(iC10))
     for (i in iC10) {
         cat("iC", i, ": ", sep="")
-	x[i] <- cor(obj$centroids[,i], td[,i],...)
+	x[i] <- cor(obj$centroids[,i], td[,i],use="pairwise.complete.obs",...)
         cat(round(x[i], 3), "\n")
     }
    total <- weighted.mean(x, w=table(obj$class)[iC10], na.rm=TRUE)

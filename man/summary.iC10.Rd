@@ -5,8 +5,8 @@
 Summary results of the iC10 classifier
 }
 \description{
-Summary results of the iC10 classifier: shows the distribution of samples classified into each iC10 group and 
-a summary of the maximum posterior probablity for each sample. Small values pinpoint samples with no clear 
+Summary results of the iC10 classifier: shows the distribution of samples classified into each iC10 group and
+a summary of the maximum posterior probablity for each sample. Small values pinpoint samples with no clear
 group assigned.
 }
 \usage{
@@ -21,10 +21,12 @@ Additional arguments passed to \code{summary}.
 }
 }
 \value{
-The function prints a table of the classification ad a summary of the maximum posterior probability for 
+The function prints a table of the classification ad a summary of the maximum posterior probability for
 each sample.
 }
 \references{
+Ali HR et al. Genome-driven integrated classification of breast cancer
+validated in over 7,500 samples. Genome Biology 2014; 15:431.
 Curtis et al. The genomic and transcriptomic architecture of 2,000
 breast tumours reveals novel subgroups. Nature 2012; 486:346-352.
 Tibshirani et al. Diagnosis of multiple cancer types by shrunken

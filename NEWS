@@ -1,2 +1,7 @@
+iC10 1.1.1
+- Removed dependency to CONOR as it is not longer maintained.
+- variable name chrom changed to chromsome_name in getCNFeatures to be consistent with documentation
+- Acknowledge beadarray 2.14.1
+- Genome Biology Paper reference added.
 iC10 1.0.2
 - The package depends on iC10TrainData (instead of importing it)

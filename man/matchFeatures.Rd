@@ -10,9 +10,9 @@ using either genomic position or HUGO gene name for copy number features and eit
 probe names or HUGO gene name for expression features.
 }
 \usage{
-matchFeatures(CN = NULL, Exp = NULL, 
-CN.by.feat = c("gene", "probe"), 
-Exp.by.feat = c("gene", "probe"), 
+matchFeatures(CN = NULL, Exp = NULL,
+CN.by.feat = c("gene", "probe"),
+Exp.by.feat = c("gene", "probe"),
 ref="hg19")
 }
 %- maybe also 'usage' for other objects documented here.
@@ -61,6 +61,8 @@ A list with the following elements is returned:
  \item{map.exp}{annotation data for the expression features}
 }
 \references{
+Ali HR et al. Genome-driven integrated classification of breast cancer
+validated in over 7,500 samples. Genome Biology 2014; 15:431.
 Curtis et al. The genomic and transcriptomic architecture of 2,000
 breast tumours reveals novel subgroups. Nature 2012; 486:346-352.
 }
@@ -68,7 +70,10 @@ breast tumours reveals novel subgroups. Nature 2012; 486:346-352.
 Oscar M Rueda
 }
 \note{
-Note that the training set will be different, depending on the features matched.
+Note that the training set will be different, depending on the features
+matched.
+Genomic annotation for the training dataset has been obtained from Mark
+Dunning's lluminaHumanv3.db package.
 }
 
 \seealso{

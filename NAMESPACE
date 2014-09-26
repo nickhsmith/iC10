@@ -1,4 +1,4 @@
-import("pamr", "CONOR", "iC10TrainingData")
+import("pamr", "iC10TrainingData")
 export("iC10", "matchFeatures", "normalizeFeatures", "compare", "goodnessOfFit")
 S3method(print, iC10)
 S3method(summary, iC10)

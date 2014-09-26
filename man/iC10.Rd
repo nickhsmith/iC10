@@ -3,7 +3,7 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{A copy number and expression-based classfier for breast cancers}
 \description{
-iC10 implements the classifier described in the METABRIC paper 'The genomic and transcriptomic architecture of 2,000 breast tumours reveals novel subgroups' (Curtis et al., Nature 2012). It uses copy number and/or expression form breast cancer data, trains a pamr classifier (Tibshirani et al.) with the features available and predicts the iC10 group.
+iC10 implements the classifier described in the paper 'Genome-driven integrated classification of breast cancer validated in over 7,500 samples' (Ali HR et al., Genome Biology 2014). It uses copy number and/or expression form breast cancer data, trains a pamr classifier (Tibshirani et al.) with the features available and predicts the iC10 group.
 }
 \usage{
 iC10(x, seed=25435)
@@ -12,7 +12,7 @@ iC10(x, seed=25435)
 \arguments{
   \item{x}{An object with class \code{iC10features}: A list with elements 'train.CN', 'train.Exp', 'train.iC10',
     'CN', 'Exp', 'map.cn', 'map.exp'}
-  \item{seed}{seed to initialize random number generator. It is passed to \code{set.seed()}. 
+  \item{seed}{seed to initialize random number generator. It is passed to \code{set.seed()}.
   See details.}
 }
 \details{
@@ -31,6 +31,8 @@ therefore different runs can give different results (unless a seed is specified)
  \item{map.exp}{Annotation data for the expression features}
 }
 \references{
+Ali HR et al. Genome-driven integrated classification of breast cancer
+validated in over 7,500 samples. Genome Biology 2014; 15:431.
 Curtis et al. The genomic and transcriptomic architecture of 2,000
 breast tumours reveals novel subgroups. Nature 2012; 486:346-352.
 Tibshirani et al. Diagnosis of multiple cancer types by shrunken
