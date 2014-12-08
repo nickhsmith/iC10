@@ -1,3 +1,5 @@
+iC10 1.1.2
+- Fixed bug in compare
 iC10 1.1.1
 - Removed dependency to CONOR as it is not longer maintained.
 - variable name chrom changed to chromsome_name in getCNFeatures to be consistent with documentation

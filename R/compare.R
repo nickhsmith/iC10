@@ -15,14 +15,18 @@ function(obj, iC10=1:10, newdata, name.test="Test",...) {
 	   cn.features <- cn.features[,-which(colnames(cn.features) %in% c("Synonyms_0", "Gene.Chosen"))]
          }
         cn.features$Type <- "CN"
+	features <- cn.features
     }
     if (attr(obj, "classifier.type") != "CN") {
-##        exp.features <- newdata$map.exp[,-c(9,10)]
         exp.features <- newdata$map.exp
         exp.features$Type <- "Exp"
+	features <- exp.features
     }
     max.grey.square <- nrow(cn.features)
-    features <- rbind(cn.features, exp.features)
+    if (!is.null(cn.features) & !is.null(exp.features)) {
+        common.cols <- intersect(colnames(cn.features), colnames(exp.features))
+       features <- rbind(cn.features[,common.cols], exp.features[,common.cols])
+    } 
 
     if (attr(obj, "ref") == "hg18") {
         features$CHROM <- features$chromosome_name_hg18
