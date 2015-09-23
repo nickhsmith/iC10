@@ -1,4 +1,4 @@
-import("pamr", "iC10TrainingData")
+import("stats", "graphics", "grDevices", "utils", "pamr", "iC10TrainingData")
 export("iC10", "matchFeatures", "normalizeFeatures", "compare", "goodnessOfFit")
 S3method(print, iC10)
 S3method(summary, iC10)

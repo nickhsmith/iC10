@@ -33,9 +33,9 @@ function(x, seed=25435) {
         } else {
             cat("running classifier with only copy number...\n")
             if (sum(is.na(CN))>0) {
-                ids <- which(is.na(CN))
+                ids <- which(apply(CN, 1, function(x) any(is.na(x))))
                 x$train.CN <- x$train.CN[-ids,]
-                CN <- CN[-ids]
+                CN <- CN[-ids,]
             }
             rownames(x$train.CN) <- paste(rownames(x$train.CN), "CN", sep="_")
             rownames(CN) <- paste(rownames(CN), "CN", sep="_")
