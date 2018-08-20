@@ -1,3 +1,6 @@
+iC10 1.4.0
+- Fixed bugs with matchFeatures and plot
+- Added more gene synonyms (thanks to Jose Costa)
 iC10 1.1.3
 - Fixed bug in iC10 when only copy number is present and there are missing values
 iC10 1.1.2
