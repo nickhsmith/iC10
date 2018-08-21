@@ -32,7 +32,7 @@ function (CN = NULL, Exp = NULL, CN.by.feat = c("gene", "probe"),
             Synonyms <- gsub(" ", "", Synonyms)
             names(Synonyms) <- tmp
             Synonyms <- Synonyms[which(!is.na(Synonyms))]
-            train.CN <- as.matrix(train.CN[rownames(Map.All),
+            train.CN <- as.matrix(train.CN[Map.All$Probe_ID,
                 ])
             rownames(train.CN) <- Map.All$Gene_symbol
         }
