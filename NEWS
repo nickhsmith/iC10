@@ -1,3 +1,5 @@
+iC10 1.5
+- Changed dependency from pam.knn.impute to impute
 iC10 1.4.0
 - Fixed bugs with matchFeatures and plot
 - Added more gene synonyms (thanks to Jose Costa)

@@ -18,8 +18,7 @@ function(x, seed=25435) {
                               genenames=c(rownames(x$train.CN), rownames(x$train.Exp)))
             model.train <- pamr.train(data.pamr)
             New <- rbind(CN, Exp)
-            tmp <- list(x=New)
-            New <- pamr.knnimpute(tmp)$x
+            New <- impute.knn(New)$data
             cv <- pamr.cv(model.train, data=data.pamr)
             thr <- cv$threshold[which.min(cv$error)]
             Pred <- pamr.predict(model.train, newx=New,
@@ -59,10 +58,11 @@ function(x, seed=25435) {
         Exp <- as.matrix(Exp)
         New <- as.matrix(Exp)
         rownames(x$train.Exp) <- paste(rownames(x$train.Exp), "Exp", sep="_")
-        data.pamr <- list(x=as.matrix(x$train.Exp), y=x$train.iC10, genenames=rownames(x$train.Exp))
-        data.pamr <- pamr.knnimpute(data.pamr)
-        tmp <- list(x=New)
-        New <- pamr.knnimpute(tmp)$x
+        x$train.Exp <- impute.knn(as.matrix(x$train.Exp))$data
+        data.pamr <- list(x=as.matrix(x$train.Exp),
+                          y=x$train.iC10,
+                          genenames=rownames(x$train.Exp))
+        New <- impute.knn(New)$data
         ## gene.subset.1 <- apply(x$train.Exp, 1, function(x) !any(is.na(x)))
         ## gene.subset.2 <- apply(New, 1, function(x) !any(is.na(x)))
         ## gene.subset <- which(gene.subset.1  & gene.subset.2)
@@ -79,7 +79,7 @@ function(x, seed=25435) {
         names(Pred) <- colnames(New)
         cl.type <- "Exp"
     }
-    res <- list(class=Pred, posterior=Prob, centroids=Centroids, fitted=New, map.cn=x$map.cn, 
+    res <- list(class=Pred, posterior=Prob, centroids=Centroids, fitted=New, map.cn=x$map.cn,
     map.exp=x$map.exp)
     attr(res, "classifier.type") <- cl.type
     attr(res, "CN.by.feat") <- attr(x, "CN.by.feat")

@@ -54,5 +54,3 @@ features <- normalizeFeatures(features, "scale")
 res <- iC10(features)
 compare(res, 1:3, newdata=features)
 }
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
