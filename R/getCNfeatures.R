@@ -48,6 +48,7 @@ function(CN, Probes, Map, by.feat, ref, Synonyms) {
                            CN$loc.start<=Map[id, paste('end_position', ref, sep="_")]) |
                            (CN$loc.start<=Map[id, paste('start_position', ref, sep="_")] &
                             CN$loc.end>=Map[id, paste('start_position', ref, sep="_")]))),]
+        if(nrow(sub.CN) > 0){
         feo <- sapply(split(sub.CN, sub.CN$ID), function(x) {
             if (nrow(x)>0) res <- x$seg.mean[which.max(abs(x$seg.mean))]
             else res <- NA
@@ -55,6 +56,7 @@ function(CN, Probes, Map, by.feat, ref, Synonyms) {
         feo <- data.frame(ID=names(feo), feo)
         colnames(feo)[2] <- as.character(Map[id,'Probe_ID'])
         new.D1 <- merge(new.D1, feo, all.x=TRUE)
+        }
     }
     ## Impute NAs
         if (sum(is.na(new.D1))>0) {
