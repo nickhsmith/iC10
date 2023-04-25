@@ -26,6 +26,9 @@ function (x, sample.name = 1, newdata = NULL, ...)
     if (attr(x, "ref") == "hg19") {
         features$CHROM <- features$chromosome_name_hg19
     }
+    if (attr(x, "ref") == "hg38") {
+        features$CHROM <- features$chromosome_name_hg38
+    }
     Pos <- c(1, which(diff(features$CHROM) != 0), nrow(features))
     text.pos <- Pos + c(diff(Pos)/2, 0)
     text.pos <- text.pos[-length(text.pos)]
