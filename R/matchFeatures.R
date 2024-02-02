@@ -100,7 +100,8 @@ function (CN = NULL, Exp = NULL, CN.by.feat = c("gene", "probe"),
         common.cols <- intersect(colnames(Exp), colnames(CN))
         Exp <- Exp[, which(colnames(Exp) %in% common.cols)]
         CN <- CN[, which(colnames(CN) %in% common.cols)]
-        CN <- CN[, match(colnames(Exp), colnames(CN))]
+        Exp <- as.matrix(Exp)
+        CN <- as.matrix(CN)
         all.na <- which(apply(Exp, 1, function(x) mean(is.na(x))) <
             1)
         Exp <- Exp[all.na, ]
